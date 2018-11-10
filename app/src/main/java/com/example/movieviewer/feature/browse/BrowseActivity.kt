@@ -14,9 +14,7 @@ import kotlinx.android.synthetic.main.activity_browse.viewRoot
 class BrowseActivity : AppCompatActivity() {
 
   private val movieRecyclerViewAdapter = MovieRecyclerViewAdapter()
-
-  //TODO("Initialize retrofit")
-
+  
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(layout.activity_browse)
