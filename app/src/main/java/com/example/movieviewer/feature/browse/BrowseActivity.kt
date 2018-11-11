@@ -5,7 +5,7 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.view.View
-import com.example.movieviewer.R.layout
+import com.example.movieviewer.R
 import com.example.movieviewer.model.Movie
 import kotlinx.android.synthetic.main.activity_browse.progressBar
 import kotlinx.android.synthetic.main.activity_browse.rvMovie
@@ -17,7 +17,7 @@ class BrowseActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(layout.activity_browse)
+    setContentView(R.layout.activity_browse)
     title = "Popular"
 
     //Link recycler view to adapter
