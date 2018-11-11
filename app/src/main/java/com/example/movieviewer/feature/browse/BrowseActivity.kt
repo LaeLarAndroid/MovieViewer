@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_browse.viewRoot
 class BrowseActivity : AppCompatActivity() {
 
   private val movieRecyclerViewAdapter = MovieRecyclerViewAdapter()
-  
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(layout.activity_browse)
@@ -24,32 +24,36 @@ class BrowseActivity : AppCompatActivity() {
     rvMovie.layoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
     rvMovie.adapter = movieRecyclerViewAdapter
 
+    loadData()
   }
 
-  fun getMovieList() {
+  private fun loadData() {
     TODO("Get Movie List from API")
   }
 
-  fun showLoading() {
+  private fun showLoading() {
     progressBar.visibility = View.VISIBLE
     rvMovie.visibility = View.GONE
   }
 
-  fun showMovieList(movieList: List<Movie>) {
+  private fun showMovieList(movieList: List<Movie>) {
     progressBar.visibility = View.GONE
     rvMovie.visibility = View.VISIBLE
     movieRecyclerViewAdapter.submitList(movieList)
   }
 
-  fun showError() {
+  private fun showError() {
     progressBar.visibility = View.GONE
     rvMovie.visibility = View.GONE
 
-    Snackbar.make(viewRoot, "Error loading data", Snackbar.LENGTH_INDEFINITE)
-      .setAction("Retry") {
-        getMovieList()
-      }
-      .show()
+    val snackBar = Snackbar.make(viewRoot, "Error loading data", Snackbar.LENGTH_INDEFINITE)
+
+    snackBar.setAction("Retry") {
+      loadData()
+      snackBar.dismiss()
+    }
+
+    snackBar.show()
   }
 
 }

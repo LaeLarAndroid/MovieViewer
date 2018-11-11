@@ -23,6 +23,6 @@
       app:layout_constraintHorizontal_bias="0.52"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      tools:srcCompat="@tools:sample/avatars"
+      tools:srcCompat="@drawable/placeholder_bg"
       />
 </android.support.constraint.ConstraintLayout>
